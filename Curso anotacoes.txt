@@ -1,0 +1,88 @@
+1. Backend:
+1.Para criar o arquivo package.json crud/backend
+npm init -y.
+pode colocar as dependencias.
+
+2.Local ideal depedencias para construir a api.
+npm i json-server
+
+db.json. é todo endpoint da api.
+
+No package.json
+"start": "json-server --watch db.json --port3001"
+start é o nome utilizado para iniciar o json.
+json-serve - chama ele.
+--watch db.json -monitorando
+--port3001 nesta porta selecionada
+
+Lembrando que faz o npm start
+na pasta crud/backend..
+e para verificar o db.json 'PRECISA' estar na pasta backend
+
+Um pouco de Postman
+
+GET: ele irá obter o resultado do JSON.
+POST -> body -> x.www-form-urlencoded ->name price (ele irá acrescentar um novo registro).
+PUT: ele irá alterar o objeto inteiro.
+-y responder a pergunta com o mesmo padrão.
+
+Front End:
+2. Visão Geral do Angular
+
+O que é o angular? 
+um framework JS desenvolvido pelo Google para criação aplicações Web SPA baseada em componentes.
+Código TS.
+Aplicação single page.
+
+Angular JS 1 -> Angular 2 (baseada em componentes) versão 4. semantica version. 9.1 duas vezes por ano.
+
+Command Line Interface CLI 
+npm i -g @angular/cli
+ng new minha-app - criar novo projeto.
+
+TypeSript - Linguagem pela Microsofot -> compilado para JavaScript. - browser não conhece o TS.
+Orientada a objeto e tipagem forte. Tipo dinamico, string, objeto e array dentro de uma variável, o Type script tipagem.
+É um Superset do JavaScript.
+
+Árvore de Componentes:
+diferente todos.
+MyApp - root
+Header -> Nav -> List -> (Item -> Item)
+content  -> (ContentTitle -> ProductCrud) -> ProductForm -> (Input/Button)
+
+3.Conceitos Essenciais
+
+Inicialização da App
+
+Main.ts Type Script
+-> Chama AppModule (arvores de componentes modularizada, alguns poderes, criar determinados componentes que estão visíveis apenas dentro do módulo.)
+Inicializar sua aplicação, (Bootstrapp) inicializar apontar para o componente
+AppComponent -> ele irá fazer referência o AppReader, AppFooter. Materials Design.
+
+O que é um componente?
+
+Componente Angular um pedaço de uma aplicação. em trechos de componente que representa o componente visual de sua tela.
+Angular (HTML, CSS, TS (Comportamento)). ele tem comportamento, ts, estrutura do html e estilo do CSS.
+home.component.css
+home.component.html
+home.component.ts.
+
+tag <app-home></app-home> (encapsula dentro deste componente).
+HCSS TS onde consegue encontrar os arquivos HTML, CSS.
+
+Organização de Módulos.
+referencia, para cada componente (arvore de componente)
+ele organiza em módulos, os componentes vão estar em módulo.dentro do app.module
+
+Declaration: irá ser declarar todos os componentes que fazem parte daquele módulo. (valendo para a diretivas e pipes).
+Para fora do módulo dentro para parte export. (valendo para pipes e diretivas).
+
+Exports tudo que colocou em declaration ou dentro do módulo.
+Imports outros módulos, pode depender de outro módulo.(Modulo a, b, c) da aplicação ou módulo externo.
+Providers - declarar os services
+Bootstrap - AppComponent será carregado naquele módulo, módulo inicial.
+esteja disponível na Single Page.
+carrega AppModulo.
+
+4.Criando APP com Angular CLI: ng new frontend --minimal (mínimo de instalação arquivo de testes) outro flag
+
