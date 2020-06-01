@@ -86,3 +86,24 @@ carrega AppModulo.
 
 4.Criando APP com Angular CLI: ng new frontend --minimal (mínimo de instalação arquivo de testes) outro flag
 
+5.Conhecendo os arquivos do projeto.
+
+inline cria um arquivo só.
+Main ts. carrega um appmodule. (os componentes que ficam visiveis dentro do módulo).
+
+Bootstrap qual é componente.
+Assets imagens ou outra aplicação.
+environments de ambiente.
+<app-root> - refêrencia a partir do seletor.
+
+6. html <app>
+double mustache ira interpretar o valor do nome 
+7. Header 
+ng generate g c components/header - para gerar o componente header
+<app-header>
+Declarar o app module MatToolbar e importar 
+header display: flex box;
+usa em react native, flutter, web ou reactive.
+ng g (generate) c para footer
+@decorator. component
+
