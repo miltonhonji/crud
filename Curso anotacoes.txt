@@ -40,7 +40,7 @@ Command Line Interface CLI
 npm i -g @angular/cli
 ng new minha-app - criar novo projeto.
 
-TypeSript - Linguagem pela Microsofot -> compilado para JavaScript. - browser não conhece o TS.
+TypeSript - Linguagem pela Microsoft -> compilado para JavaScript. - browser não conhece o TS.
 Orientada a objeto e tipagem forte. Tipo dinamico, string, objeto e array dentro de uma variável, o Type script tipagem.
 É um Superset do JavaScript.
 
@@ -106,4 +106,90 @@ header display: flex box;
 usa em react native, flutter, web ou reactive.
 ng g (generate) c para footer
 @decorator. component
+Atributos directives: Altera a aparência e o comportamento de um elemento, componente ou outra diretiva. (css).
+Comportamento: uma diretiva dentro de um determinado botão, e ela faz chamada no backend, (ajax) ação do código executado por trás.
+RedDirective.
+decorator padrão de projeto. evitar herança, trabalhar com composição. @Directive exibe algum papel dentro de um framework. @directive.dentro da tag html.
+Uma diretiva de atributo, ela consegue alterar o estilo com alterar o comportamento (aparências).
+Diretivas estruturas altera as estruturas de sua página, altera a dom e removendo os elementos da dom, no html.
+A DIRETIVA ESTRUTURAL TEM um Asterisco. - Ele vai exibir ou não elemento se o produto estiver definido ou suprimir um determinado elemento.
+*ngFor ele irá acrescentar novos elementos, se tiver 10 produtos, ele vai repetir,mostrando os nomes do produto.
+ele está acrescentando novo elemento. diretivas, já vem no angular.
+Componente com uma pequena aplicação, entre o seu arquivo TS com o arquivo HTML.
+ESTILOS css, componente HTML entre o código TS e o HTML (template e componente com a classe).
+colocar o valor [datasource] precisa estar entre parênteses.
+dataSource products a string produto passa para a variável produto.
+Binding evento (sintáse para o parentêses) o angular não faz a ligação com o (click) 
+One way data binding -> binding de atributo, valor do input vai pegar o nome
+[(ngModel)]="nome"
+input para a variável se alterar na ts [(ngModel)] -> sintaxe two way data Binding (formulários)
+ANGULAR ROUTER
 
+PIPES SÃO PROCESSAMENTOS EM CIMA DA VARIAVEL.
+Double mustache igual bigode.{{ name || date }}
+ passar mais de um parêmetro. cadeia de processamento.
+ 
+Elementos Angular
+- Programação Reativa
+ReactiveX: RXJAVA, RXJS.
+Proativo, significa que irá consumir processamento.  - ele acaba executando mais processador, menos desejado.
+O padrão Observer: Padrão orientada a Evento, ele padrão GOF - Gague dos 4.
+Subject - quem tem a capacidade de monitorar o evento que acontece.
+Observers - São os códigos, as pessoas que estão interessadas em um determinado evento - podemos delegar para este subject. (me avise que o evento aconteceu)preecisar registrar no subject.
+explicito desejo de notificações do evento. vai detectar e percebe que o evento aconteceu.notifica todos os observer, do evento que foi gerado.
+Reativa vai ser chamada, quando um determinado evento acontecer.
+Entendendo Observables:
+Callbacks: funcção para outra função (como parâmetro). Quando tem uma lógica complexa - Callbacks Hell.
+Promises - usa só uma vez.
+Observables é diferente de promises: vantagem consegue reusável, stream dados e operadores - recebe a string de dados em sequência.
+Operadores - juntamente com os observadores (then, map, filter). tem como trabalhar com os observables, que ajudam a processar os dados.
+string de dados.
+Observable, encapsular o padrão observable.
+O que são services? São classes que têm como principal objetivo organizar e compartilhar métodos e dados entre componentes. (Separar a responsabilidade).
+Ele não te separar services. Como quer viabilizar comunicação entre componentes. (precisa ser compartilhado entre componente A e B).
+Compartilhar os dados entre componentes.
+Motivação para o service -html, css, ts, lógica, azul responsabilidade visual do componente
+Vermelho - não dizem respeito a parte visual do componente.
+Service - colocar a logica x (não está mais duplicada).
+Mais focado no que deve fazer.
+Service ng g s (services/product) aonde na pasta onde queria colocar.
+nome do service nome do arquivo.service.ts
+Nome da classe ProductService 
+Elementos Angular #03
+Singleton - uma instância de uma classe.
+injeção de dependência - é um padrão no qual a classe recebe as dependências de uma fonte externa ao invés de criar por conta própria.
+A precisa da classe B - vai criar a classe B.
+Inversão da lógica, recebe as dependências da fonte Externa. - A -> B a classe a recebera a classe b (construtor).
+Sempre quando há depende de outra classe. precisará passara o parâmetro, o que precisa passar o motor construido dentro do carro.
+Classe de motor para o Carro.
+
+Injeção de Dependência
+
+Injeção de dependências productCreateComponent.
+- ProductService gera a instância do productService
+ProductCreateComponent - vai receber o ProductService.
+root -app.module.
+no lugar do root (referência para o módulo). alphi module.
+Services são singletons dentro do escopo de um injector.
+Module Injector ElementInjector
+
+Componente Home
+(colocar o app-home) na nav.
+MAT- CARD (Adicionar a biblioteca no app.module).
+CSS
+rem: um tipo de unidade relativa, relação com o raiz da página.
+em: sempre relativo ao pai, relativo ao anterior.
+
+Navegando entre Componentes
+
+TS: os elementos tipado, você consegue ter o code complete (no JS que não tem tanto como a IDE inferir o tipo de objeto).
+Diretivas estruturais usam (*) na frente.
+
+ng g d (diretivas)
+Diretiva de atributos, é capaz na partee do estilo do componente,
+classe de diretiva estrutural
+
+Binding Identity Binding e o Binding de Atributos.
+Binding (click) chama o método dentro do componente.
+
+(cl
