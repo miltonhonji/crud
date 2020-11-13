@@ -175,7 +175,7 @@ Module Injector ElementInjector
 
 Componente Home
 (colocar o app-home) na nav.
-MAT- CARD (Adicionar a biblioteca no app.module).
+MAT-CARD (Adicionar a biblioteca no app.module).
 CSS
 rem: um tipo de unidade relativa, relação com o raiz da página.
 em: sempre relativo ao pai, relativo ao anterior.
@@ -192,4 +192,82 @@ classe de diretiva estrutural
 Binding Identity Binding e o Binding de Atributos.
 Binding (click) chama o método dentro do componente.
 
-(cl
+
+Criação:
+Para gerar uma tabela: ng generate @angular/material:table <component-name>
+O que o Leonardo mencionou: ng generate @angular/material:table components/product/product-read2
+Irá ser alterado no app.module o modulo da tabela, paginação e módulo de ordenação da coluna
+Criará os componente ProductRead2Component e o importador os MatTableModule, MatPaginatorModule, MatSortModule.
+Já estará disponível para alterar o views-> product-crud e alterar em HTML.
+<app-product-read2></app-product-read2>
+
+Para alterar o Product-read2: product-read2/product-read2-datasource. 
+É o local aonde estão as informações.
+
+Paginator: product-read2 component.html.
+mat-paginator padrão do pageSize="50"
+PageSizeOptions [menor página, maior página].
+Primeiro ele ordena e depois faz a paginação.
+Product-read oficial.
+(sem paginação e ordenação).
+
+Sendo um pouco chato:
+
+O que é um atributo? 
+R: Os atributos em Programação Orientada a Objetos, são elementos que irão definir a estrutura de uma classe. Também são conhecidos como variáveis de classe e podem ser divididos em dois
+tipos básicos: atributos de instância e de classe.
+Valores de Atributos de instância, são aqueles que determinam o estado de cada objeto. 
+Já os atributos de classe possui um estado que é compartilhaddo por todos os objetos de uma classe. 
+
+Entendendo o componente gerado.
+
+Product-read2.component - ligação de todas informações.
+ngOnInit é aonde fica o dataset.
+Interface e a lista alocada substituir a data aplicação.
+fonte de dados:
+Const EXAMPLE_DATA importar a classe Product[] e alterar o preço como opcional.
+Alterar em ProductRead2DataSource extends DataSource<Product>: Product[]. 
+Existem 
+
+Atualizar o componente:
+Remover o ProductRead2Item do import substituir para os produtos.
+@ViewChild(MatTable) table: MatTable<Product>;
+
+ele possui três atributos são data (são os dados do produto), paginator (MatPaginador) E sort (MatSort) este componente tem a função de ordenar os produtos (pela seta) e a paginação.
+Este componente é visto no componentes  no @(decorator) Ele é filho do tela e filho do componente, ele irá verificar o componente paginator. html.
+datasource está sendo criado ngOnInit, ele pega o this.datasource. e os dados de exemplo.
+Pode setar o datasource pela própria table.
+Ele entede o datasource e a tabela. Os dados a paginação e ordenamento dos dados. (paginação e ordenação) irá impactar na renderização.
+Connect irá fazer tudo aqui e a junção dos dados da tabela e renderização da tabela e ordenação.
+Um componente rxjs (merge) ele irá juntar os pipes em cima dos dados do array de produtos e getSortedData (ele ordenação dos dados).
+GetSortedData ele tem um método que faz as ordenações dos dados.
+Também utiliza outro método atual usando splice (pega um subarray e o tamanho da página.)
+
+Estrutura HTML. Component
+As Colunas exibidas na tabela (displayedColumns) duas colunas 'id' e 'name'.
+matHeaderRowDef(diretiva) ele usa dentro e o componente e criar o componente da tabela.
+<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>, 
+esta linha define os nomes que estão na tabela. a parte que define os template e as linhas. uma variável row, uma das linhas.
+MatColumn def= id e name (iguais o do display) e os nomes do matColumnDeef (os nomes do cabeçalhos e das colunas.).
+Para acrescentar a coluna price (utilizar o product-read2-datasource em const EXAMPLE)DATA: Product[]).
+retirado a referencia o product-read2 dentro do crud2.
+Desafio: Table datasource databind de proprieda (vincular com o datasource da tabela).
+
+Novos métodos em produto service:
+Update já precisará ter um registro preenchido.
+Criar o componente de atualização:
+ng g c components/product/product-update
+Para adicionar a rota Product-crud app-routing-module.ts
+  {
+    path: "products/update/:id",
+    component: ProductUpdateComponent
+  } 
+Quando é digitado no navegador products/update/10 {terá que aparecer a tela angular para configurar o botão.
+Já no HTML product-read.component.html -> no routerLink irá colocar '/products/update/ {{ row.id }}' devido ao let row definido na matCellDef. 
+
+Aula de Excluir 
+Local criar a função com a o backend.
+implementação da função do backend
+Operação do backend - Delete é delete (delete id:string)
+
+Desafio Componente Excluir
